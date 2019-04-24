@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HITSHIP2P</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/site.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="main">
+    <h1 class="main-heading">
+        <span class="main-heading-primary">HITSHIP</span>
+        <span class="main-heading-secondary">sink the ships!</span>
+        <span class="main-heading-multi">1 vs. 1</span>
+    </h1>
+</div>
+<div class="container">
+    <div class="row vertical-center-row">
+        <div class="col-md-12">
+
+            <!-- Disconnected from server -->
+            <div id="disconnected">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <div class="alert alert-danger">
+                            <p>Nicht verbunden</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waiting room -->
+            <div id="waiting-room" style="display:none;">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-header"><h2>Willkommen im Warteraum!</h2></div>
+                            <div class="panel-body">
+                                <p>Sie sind mit dem Server verbunden.</p>
+                                <p>Warte auf weiteren Spieler...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game -->
+            <div id="game" style="display:none;">
+                <div class="row">
+                    <!-- Status -->
+                    <div class="list-group-item" id="turn-status"></div>
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+
+                                <!-- Player grids -->
+                                <div class="row" id="gamefield">
+                                    <div id="line-left" class="col-md-6 player-grid text-center">
+                                        <h3>DEINE KRIEGSFLOTTE</h3>
+                                        <canvas id="canvas-grid1" width="361" height="361">Dein Browser unterstützt keine Canvas</canvas>
+                                    </div>
+                                    <div id="line-right" class="col-md-6 player-grid text-center">
+                                        <h3>GEGNERISCHE KRIEGSFLOTTE</h3>
+                                        <canvas id="canvas-grid2" width="361" height="361">Dein Browser unterstützt keine Canvas</canvas>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="panel-heading">Server Raum: <span id="game-number"></span></div>
+                            <ul class="list-group">
+
+                                <!-- Chat messages -->
+                                <li class="list-group-item" id="messages-list">
+                                    <ul id="messages"></ul>
+                                </li>
+
+                                <!-- Send chat message form -->
+                                <li class="list-group-item">
+                                    <form id="message-form" action=""><p>Schreibe deine Nachricht!</p>
+                                        <div class="input-group">
+                                        <input id="message" class="form-control" autocomplete="off" />
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary">Sende Nachricht</button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+<script type="text/javascript" src="/js/game.js"></script>
+<script type="text/javascript" src="/js/client.js"></script>
+</body>
+</html>

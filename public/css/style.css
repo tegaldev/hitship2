@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* CSS Document für das Spiel HITSHIP von Thomas Egner*/
+
+*    {
+      box-sizing: border-box;
+     }
+
+
+body {
+	font-size:16px;
+  margin:0 auto;
+  width: 100vw;
+	height: 100vh;
+  max-width: 950px;
+	font-family:'Helvetica', 'Arial', 'Sans-Serif';
+	background-repeat:no-repeat;
+	overflow:auto;
+}
+
+h1 {
+  font-size: 3em;
+  font-family:'Georgia', 'serif';
+	text-align:center;
+	color: rgba(2, 12, 29, 0.53);
+}
+
+h2 {
+  font-size: 2em;
+  font-family:'Georgia', 'serif';
+	text-align:center;
+	color: rgba(255, 255, 255, 0.53);
+}
+
+/*Dies ist die Kopfanimation*/
+
+.main {
+	position:relative;
+	left:50%;
+	top:5%;
+    transform: translate(-50%, -50%);
+}
+
+.main-heading {
+  color: #777;
+  text-transform: uppercase;
+}
+
+.main-heading-primary {
+  display: block;
+  font-size: 5.0rem;
+  font-weight: 400;
+  letter-spacing: 0.55em;
+  animation: moveInLeft 1s ease-out;
+}
+
+.main-heading-secondary {
+  font-family: sans-serif;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1.20em;
+  color: rgba(61, 200, 255, 1);
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  
+  80% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  80% {
+    transform: translateX(-10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/*Section Bereich*/
+
+section {
+	float:right;
+	width: 40%;
+}
+
+#infofeld {
+	position:relative;
+	display:block;
+	height: 12em;
+	border-radius: 5px;
+	background-color: rgba(2, 12, 29, 0.53);
+	padding: 1em;
+	color:white;
+}
+#infofeld p {color:white;}
+
+p, button, input {
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #333;
+	margin-bottom:1em;
+}
+
+#spielBrett {
+	z-index: 10;
+	float:left;
+	position:relative;
+	margin:1em auto 2em auto;
+	width:500px;
+	height:500px;
+}
+#spielBrett #letternumber div{
+	z-index: 20;
+	position:absolute;
+	background-color:#fff;
+	border: 1px solid #ddd;
+	width:45px;
+	height:45px;
+	color: rgba(2, 12, 29, 0.53);
+	opacity: 80%;
+}
+#sperrbox {
+	position:absolute;
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 500px;
+	height: 500px;
+	z-index:9999;
+}
+
+#out {
+	background-color: #000000;
+	text-align:center;
+	padding-top:0.3em;
+	font-size: 1.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+
+#spielBrett #spielBereich div {
+	z-index: 30;
+	position:absolute;
+	-webkit-box-sizing: border-box; /* Safari 3.0 - 5.0, Chrome 1 - 9, Android 2.1 - 3.x */
+	-moz-box-sizing: border-box;    /* Firefox 1 - 28 */
+	box-sizing: border-box;         /* Safari 5.1+, Chrome 10+, Firefox 29+, Opera 7+, IE 8+, Android 4.0+, iOS any */
+	background-color: #f6f8f9; /* Old browsers */
+	border: 1px solid #ddd;
+	width:45px;
+	height:45px;
+}
+
+/* Button Design */
+#mischen{
+float: left;
+}
+
+.grey {
+color: rgba(2, 12, 29, 0.53);
+}
+
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: black;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  position: relative;
+  text-transform: uppercase;
+  height:3em;
+}
+
+button::before,
+button::after {
+  background: black;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: rgba(61, 200, 255, 1);
+}
+
+/* Btn Class */
+.btn {
+  overflow: hidden;
+}
+
+.btn::after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(30deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+.buttonst {
+float:left;
+margin-left:5%;
+background-color:white;
+margin-bottom: 1rem;
+}
+
+/*Schwierigkeits Bereich*/
+
+/*popup Formatierung*/
+
+.textsection {
+  color: rgba(61, 200, 255, 1);
+  font-weight: bold;
+  text-align: left;
+  line-height: 1em;
+  margin-left: 5%;
+  text-transform: uppercase;
+  float:left;
+  width: 400px;
+}
+
+.mode {
+position: absolute;
+	z-index: 500;
+	width: 400px;
+	height: 250px;
+	border-radius: 5px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background-color: rgba(2, 12, 29, 0.53);
+}
+
+#remove {
+display: none;
+}

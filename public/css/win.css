@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document für die Gewinnsequenz von die Schiffeversenken von Thomas Egner*/
+
+/*<div class="center firework"></div>
+<div class="firework" id="position"></div>
+<div class="firework" id="position2"></div>
+<h1 id="win">DU HAST GEWONNEN</h1>*/
+
+#popup{
+	position: relative;
+}
+
+#windiv{
+	position: absolute;
+	z-index: 600;
+	width: 865px;
+	border-radius: 5px;
+	height: 400px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background-color: rgba(2, 12, 29, 0.53);
+}
+#outtext{
+	color: white;
+	text-align: center;
+	margin-top:5rem;
+}
+
+
+.firework {
+	margin: 25px auto 25px;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	animation: firework ease-out infinite 2s;
+}
+
+#win {
+	font-size: 3em;
+	font-family:'Georgia', 'serif';
+	text-align:center;
+	color: white;
+	margin-top:3em;
+	font-weight: 400;
+	letter-spacing: 0.6em;
+}
+
+@keyframes firework {
+	10% {
+		box-shadow: 
+      -10px 10px yellow,
+      10px 10px yellow,
+      10px -10px yellow,
+      -10px -10px yellow,
+      
+      -10px 0px white,
+      10px 0px white,
+      0px -10px white,
+      0px 10px white;
+	}
+  100% {
+    box-shadow: 
+      -80px 80px 10px rgba(255,255,255,0),
+      80px 80px 10px rgba(255,255,255,0),
+      80px -80px 10px rgba(255,255,255,0),
+      -80px -80px 10px rgba(255,255,255,0),
+    
+      -100px 0px 10px rgba(255,255,255,0),
+      100px 0px 10px rgba(255,255,255,0),
+      0px -100px 10px rgba(255,255,255,0),
+      0px 100px 10px rgba(255,255,255,0);
+  }
+}
+
+.center {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#position {
+ 	position: absolute;
+	margin: auto;
+	left: 20%;
+	top: 5%;
+	bottom: 0;
+	right: 0;
+  animation: firework ease-out infinite 1.5s;
+}
+
+#position2 {
+ 	position: absolute;
+	margin: auto;
+	left: 40%;
+	top: 5%;
+	bottom: 0;
+  animation: firework ease-out infinite 2.5s;
+}
+
+/*Fade out / Fade in CSS*/
+.show {
+  z-index:100;
+  opacity: 1;
+  transition: opacity 3000ms;
+}
+
+.hide {
+  z-index:1;
+  opacity: 0;
+  transition: opacity 3000ms;
+}
